@@ -25,10 +25,10 @@ jobs:
         run: npm run build
 
       - name: Docker Build
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/vite-react-app .
+        run: docker build -t pranay7505/vite-react-app .
 
       - name: Docker Login
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        run: echo "YOUR_DOCKER_ACCESS_TOKEN" | docker login -u "pranay7505" --password-stdin
 
       - name: Docker Push
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/vite-react-app
+        run: docker push pranay7505/vite-react-app
